@@ -94,6 +94,38 @@ dependencies:
 ```
 
 ## Running the App
+- **Clone the Repository**
+```bash
+  git clone <repository_url>
+  cd airport-proximity-notifier
+```
+- **Install Dependencies**
+```bash
+  flutter pub get
+```
+- **Set Up Permissions**
+    - Edit the android/app/src/main/AndroidManifest.xml:
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fechalalenge">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="io.flutter.app.FlutterApplication"
+        android:label="fechalalenge"
+        android:icon="@mipmap/ic_launcher">
+        <!-- ... -->
+    </application>
+</manifest>
+```
+- **Configure Background Geolocation**
+    - Follow additional setup from the [flutter_background_geolocation package](https://pub.dev/packages/flutter_background_geolocation) documentation.
+
+## Running the App
 - **Connect a Device or Emulator**
     - For accurate location tracking, use a physical device.
     - If using an emulator, ensure it supports Google Play services.
